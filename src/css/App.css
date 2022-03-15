@@ -85,6 +85,15 @@ input[type="submit"]:hover{
   height: 100%;
   gap: 2.5rem;
 }
+.artist-content_info a{
+  text-decoration: none;
+  color: var(--black-color);
+}
+.artist-content_info a:hover{
+  background-color: var(--black-color);
+  color: var(--main-bg-color);
+  padding: .5rem;
+}
 .lyrics{
   width: 100%;
   overflow-y: scroll;

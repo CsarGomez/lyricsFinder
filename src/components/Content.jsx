@@ -9,7 +9,7 @@ const Content = ({ search, artist, lyrics }) => {
   return (
     <div className="content">
       {artist.artists ? (
-        <Artist artist={artist.artists[0]} song={search.song} />
+        <Artist artist={artist.artists[0]} />
       ) : (
         <Message msg={`Cant find artist ${search.artist} `} />
       )}
@@ -19,7 +19,7 @@ const Content = ({ search, artist, lyrics }) => {
           msg={`Error: ${lyrics.status} - song ${search.song} ${lyrics.statusText} `}
         />
       ) : (
-        <Lyrics lyrics={lyrics} />
+        <Lyrics lyrics={lyrics} song={search.song} />
       )}
     </div>
   );

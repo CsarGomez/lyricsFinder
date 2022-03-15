@@ -1,11 +1,9 @@
 import React from "react";
 
-const Artist = ({ artist, song }) => {
+const Artist = ({ artist }) => {
   return (
     <div className="artist">
-      <h1>
-        {artist.strArtist} - {song}
-      </h1>
+      <h1>{artist.strArtist}</h1>
       <div className="artist-content">
         <div className="artist-content_image">
           <img src={artist.strArtistThumb} alt={artist.strArtist} />
@@ -26,7 +24,17 @@ const Artist = ({ artist, song }) => {
           </p>
           <p>
             <b>Website:</b>
-            {artist.strWebsite === null ? "No info" : artist.strWebsite}
+            {artist.strWebsite ? (
+              <a
+                href={`http://${artist.strWebsite}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Official Website
+              </a>
+            ) : (
+              " No website info"
+            )}
           </p>
         </div>
       </div>
