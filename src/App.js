@@ -1,6 +1,5 @@
 import React from "react";
 import Content from "./components/Content";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
 import "./css/App.css";
@@ -53,15 +52,14 @@ function App() {
 
   return (
     <div className="app">
-      <div className="container">
+      <div>
         <Header title="Lyrics Finder" handleSearch={handleSearch} />
         {loader ? (
-          <Loader className="content" />
+          <Loader />
         ) : (
           <Content search={search} artist={artistInfo} lyrics={songLyrics} />
         )}
       </div>
-      <Footer />
     </div>
   );
 }

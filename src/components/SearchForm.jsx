@@ -39,7 +39,7 @@ const SearchForm = (props) => {
   };
 
   return (
-    <div className="form">
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="search"

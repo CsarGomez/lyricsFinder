@@ -17,26 +17,30 @@ html {
 body{
   font-family: 'Roboto', sans-serif;
 }
-
-.container{
-  padding: 1rem 5rem;
-  background-color: var(--main-bg-color);
-  height: 94vh;
+.app{
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
 }
-/* HEADER */
-Header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.center-txt{
+  text-align: center;
+}
+.center-txt p{
+  margin-top: 5rem;
+}
+h1,h2{
+  margin-bottom: 1rem;
+}
+img{
+  width: 100%;
+  border-radius: .5rem;
 }
 /* FORM */
-form{
-  display: flex;
-  gap: .5rem;
-}
+
 input{
   border: 0;
   padding: .5rem;
+  min-width: 200px;
 }
 input[type="search"]{
   background-color: var(--search-box-color);
@@ -53,122 +57,81 @@ input[type="submit"]{
 input[type="submit"]:hover{
   transform: scale(.9);
 }
-
-/* CONTENT */
-.content{
-  width: 100%;
-  height: 400px;
-  display: grid;
-  gap: .5rem;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  justify-items: center;
-  padding-top: 5rem;
-}
-.artist{
-  width: 100%;
-}
-.artist-content{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.artist-content_image img{
-  border-radius: 2rem;
-  width: 300px;
-  height: auto;
-}
-.artist-content_info{
+/* ARTIST */
+.artist, .lyrics{
   display: flex;
   flex-direction: column;
-  height: 100%;
-  gap: 2.5rem;
+  align-items: center;
+  margin-top: .5rem;
+  padding-bottom: .5rem;
+}
+.artist-content_image{
+  width:200px;
+}
+/* hide information for small screens */
+.artist-content_info{
+  display: none;
 }
 .artist-content_info a{
   text-decoration: none;
   color: var(--black-color);
 }
 .artist-content_info a:hover{
-  background-color: var(--black-color);
-  color: var(--main-bg-color);
-  padding: .5rem;
+  color: crimson;
 }
+/* LYRICS */
 .lyrics{
-  width: 100%;
-  overflow-y: scroll;
-  height: 100%;
-  text-align: center;
+  padding: 1rem;
+  height: 400px;
+  background-color: var(--search-box-color);
+  border-radius: 2rem;
+  overflow-x: scroll;
 }
 .lyrics-wrap{
-  white-space: pre-wrap
-}
-.full{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-}
-footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--black-color);
-  color: var(--main-bg-color);
-  padding: 1rem;
-  height: 6vh;
-}
-.footer-logo{
-  width: 2rem;
+  white-space: pre-wrap;
 }
 
-/* MEDIA */
-@media (min-width: 300px) and (max-width: 900px) { 
-  .container{
-    padding: 1rem .2rem;
-  }
-  /* HEADER */
-  Header{
-    flex-direction: column;
-  }
-  form{
-    flex-direction: column;
-    gap: .2rem;
-  }
-  .content{
+/* MEDIA QUERIES TABLETS */
+@media (min-width: 768px){
+  .artist-content{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    height: 70vh;
-    padding-top: 1rem;
-  }
-  .artist{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .artist h1{
-    font-size: 1.5rem;
-  }
-  .artist-content{
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 5rem;
   }
-  .artist-content_image img{
-    border-radius: 2rem;
-    width: 100px;
-    height: auto;
+  .artist-content_image{
+    width:250px;
   }
   .artist-content_info{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    gap: .1rem;
+    justify-content: space-around;
   }
   .lyrics{
-    padding-top: 1rem;
+    height: 550px;
+  }
+}
+@media (min-width: 820px){
+  .lyrics{
+    height: 700px;
+  }
+}
+@media (min-width: 1024px){
+  .content{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: 80vh;
+  }
+  .artist-content{
+    gap: 2rem;
+  }
+  .artist-content_image{
+    width: 350px;
+  }
+  .lyrics{
+    height: 450px;
+    overflow-x: hidden;
   }
 }

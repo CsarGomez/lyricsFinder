@@ -3,9 +3,9 @@ import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDiss
 
 const Message = ({ msg }) => {
   return (
-    <div>
+    <div className="center-txt">
       <SentimentVeryDissatisfiedIcon />
-      <p className="error">{msg}</p>
+      <p>{msg}</p>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React from "react";
 const Artist = ({ artist }) => {
   return (
     <div className="artist">
-      <h1>{artist.strArtist}</h1>
+      <h2>{artist.strArtist}</h2>
       <div className="artist-content">
         <div className="artist-content_image">
           <img src={artist.strArtistThumb} alt={artist.strArtist} />
@@ -23,7 +23,7 @@ const Artist = ({ artist }) => {
             {artist.intDiedYear === null ? "Present" : artist.intDiedYear}
           </p>
           <p>
-            <b>Website:</b>
+            <b>Website: </b>
             {artist.strWebsite ? (
               <a
                 href={`http://${artist.strWebsite}`}
