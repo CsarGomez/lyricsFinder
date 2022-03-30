@@ -4,6 +4,8 @@ you can find any song lyrics and get some info about the artist/ band at the sam
 
 made it just for practice purposes 
 
+>Demo [here](https://lyrics-finder-omega.vercel.app/)
+
 >created with [Create React App](https://create-react-app.dev/)
 
 >API's: lyrics: [lyrics ovh](https://lyricsovh.docs.apiary.io/#) - artist info: [the audio db](https://www.theaudiodb.com/api_guide.php)
